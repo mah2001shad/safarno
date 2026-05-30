@@ -1,220 +1,511 @@
-```html
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>سفرنو | سامانه رزرو آنلاین سفر</title>
+<title>سفرنو | رزرو آنلاین سفر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 
-{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:tahoma;
-    direction:rtl;
-    background:#f5f7fa;
-    color:#333;
+font-family:'Vazirmatn',sans-serif;
+background:#f5f7fa;
+color:#333;
+line-height:1.8;
 }
 
-/ نوار بالا /
+a{
+text-decoration:none;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+/* نوار بالا */
 
 .top-bar{
-    background:#eaf7fb;
-    color:#1976d2;
-    text-align:center;
-    padding:10px;
-    font-size:14px;
+background:#eef7fb;
+padding:10px;
+display:flex;
+justify-content:center;
+gap:40px;
+font-size:14px;
+color:#0d6efd;
+flex-wrap:wrap;
 }
 
-/ هدر /
+/* هدر */
 
 header{
-    background:white;
-    padding:20px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    box-shadow:0 2px 10px rgba(0,0,0,0.05);
-    position:sticky;
-    top:0;
-    z-index:1000;
+background:#fff;
+padding:18px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+position:sticky;
+top:0;
+z-index:999;
 }
 
 .logo{
-    font-size:28px;
-    font-weight:bold;
-    color:#2EAEC7;
+font-size:32px;
+font-weight:bold;
+color:#0d6efd;
+}
+
+.logo span{
+display:block;
+font-size:12px;
+color:#666;
+}
+
+nav{
+display:flex;
+gap:25px;
 }
 
 nav a{
-    text-decoration:none;
-    color:#333;
-    margin:0 10px;
-    font-size:15px;
+color:#333;
+font-size:15px;
+font-weight:bold;
+transition:.3s;
 }
 
 nav a:hover{
-    color:#2EAEC7;
+color:#0d6efd;
 }
 
-/ هیرو /
+.login-btn{
+background:#0d6efd;
+color:#fff;
+padding:10px 18px;
+border-radius:8px;
+}
+
+/* هیرو */
 
 .hero{
-    background:url('travel.jpg') center/cover no-repeat;
-    height:500px;
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+background:url("travel.jpeg") center center/cover no-repeat;
+min-height:700px;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
 .overlay{
-    background:rgba(0,0,0,0.45);
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:rgba(0,0,0,.35);
 }
 
 .hero-content{
-    text-align:center;
-    color:white;
-    max-width:900px;
+position:relative;
+z-index:2;
+width:90%;
+max-width:1100px;
+text-align:center;
+color:#fff;
 }
 
 .hero-content h1{
-    font-size:42px;
-    margin-bottom:15px;
+font-size:52px;
+margin-bottom:15px;
+}
+
+.hero-content h1 span{
+color:#7fd4ff;
 }
 
 .hero-content p{
-    font-size:18px;
-    margin-bottom:30px;
+font-size:20px;
+margin-bottom:40px;
 }
 
-/ فرم جستجو /
+/* فرم جستجو */
 
 .search-box{
-    background:white;
-    padding:25px;
-    border-radius:16px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+background:#fff;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+color:#333;
+}
+
+.tab{
+border:none;
+cursor:pointer;
+padding:10px 20px;
+background:#f1f5f9;
+border-radius:10px;
+font-size:14px;
+transition:.3s;
+}
+
+.tab:hover{
+background:#dbeafe;
 }
 
 .search-form{
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-bottom:20px;
 }
 
 .search-form input{
-    flex:1;
-    min-width:180px;
-    padding:14px;
-    border:1px solid #ccc;
-    border-radius:10px;
-    font-size:15px;
+padding:15px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:15px;
 }
 
-.search-form button{
-    background:#2EAEC7;
-    color:white;
-    border:none;
-    padding:14px 30px;
-    border-radius:10px;
-    cursor:pointer;
-    font-size:16px;
-    transition:0.3s;
+.search-btn{
+width:100%;
+background:#0d6efd;
+color:white;
+border:none;
+padding:16px;
+border-radius:12px;
+font-size:20px;
+cursor:pointer;
+transition:.3s;
 }
 
-.search-form button:hover{
-    background:#2395aa;
+.search-btn:hover{
+background:#0056d2;
 }
 
-/ مزایا /
+.hero-features{
+margin-top:20px;
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+font-size:14px;
+}
+
+/* عنوان بخش */
+
+.section-title{
+text-align:center;
+font-size:36px;
+margin:70px 0 40px;
+color:#1e293b;
+}
+
+/* مزایا */
 
 .features{
-    max-width:1200px;
-    margin:60px auto;
-    display:flex;
-    gap:20px;
-    padding:0 20px;
-    flex-wrap:wrap;
+max-width:1200px;
+margin:auto;
+padding:0 20px 80px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
 }
 
 .feature{
-    flex:1;
-    min-width:250px;
-    background:white;
-    padding:30px 20px;
-    border-radius:16px;
-    text-align:center;
-    box-shadow:0 4px 15px rgba(0,0,0,0.06);
-    transition:0.3s;
+background:#fff;
+padding:35px 20px;
+border-radius:16px;
+text-align:center;
+box-shadow:0 4px 15px rgba(0,0,0,.06);
+transition:.3s;
 }
 
 .feature:hover{
-    transform:translateY(-5px);
+transform:translateY(-5px);
+}
+
+.feature .icon{
+font-size:40px;
+margin-bottom:15px;
 }
 
 .feature h3{
-    margin-top:15px;
-    margin-bottom:10px;
-    color:#2EAEC7;
+margin-bottom:10px;
+color:#0d6efd;
+}
+/* تورها */
+
+.tours{
+max-width:1200px;
+margin:auto;
+padding:0 20px 80px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
 }
 
-/ فوتر /
+.tour-card{
+background:#fff;
+border-radius:16px;
+overflow:hidden;
+display:flex;
+flex-direction:column;
+}
+
+.tour-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.tour-content{
+padding:20px;
+display:flex;
+flex-direction:column;
+flex-grow:1;
+}
+
+.tour-content button{
+margin-top:auto;
+}
+.tour-content h3{
+margin-bottom:10px;
+}
+
+.price{
+font-weight:bold;
+color:#0d6efd;
+margin:15px 0;
+}
+
+.tour-content button{
+width:100%;
+padding:12px;
+background:#0d6efd;
+border:none;
+color:#fff;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* بنر */
+
+.offer-banner{
+margin:30px auto 80px;
+max-width:1200px;
+padding:0 20px;
+}
+
+.offer-content{
+background:linear-gradient(135deg,#0d6efd,#00b4ff);
+color:white;
+padding:60px 30px;
+text-align:center;
+border-radius:20px;
+}
+
+.offer-content h2{
+font-size:38px;
+margin-bottom:15px;
+}
+
+.offer-content a{
+display:inline-block;
+margin-top:20px;
+background:white;
+color:#0d6efd;
+padding:12px 25px;
+border-radius:10px;
+font-weight:bold;
+}
+
+/* مزایا */
+
+.advantages{
+max-width:1200px;
+margin:auto;
+padding:0 20px 80px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.adv-card{
+background:#fff;
+padding:30px;
+text-align:center;
+border-radius:16px;
+box-shadow:0 4px 15px rgba(0,0,0,.06);
+}
+
+.adv-icon{
+font-size:42px;
+margin-bottom:15px;
+}
+
+/* مقاصد */
+
+.destinations{
+max-width:1200px;
+margin:auto;
+padding:0 20px 80px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.destination{
+background:#fff;
+padding:35px;
+text-align:center;
+border-radius:16px;
+box-shadow:0 4px 15px rgba(0,0,0,.06);
+}
+
+.destination h3{
+color:#0d6efd;
+margin-bottom:10px;
+}
+/* CTA */
+
+.cta{
+background:linear-gradient(135deg,#0d6efd,#00b4ff);
+padding:80px 20px;
+text-align:center;
+color:white;
+margin-top:30px;
+}
+
+.cta h2{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.cta p{
+font-size:18px;
+margin-bottom:25px;
+}
+
+.cta a{
+display:inline-block;
+background:white;
+color:#0d6efd;
+padding:14px 30px;
+border-radius:10px;
+font-weight:bold;
+}
+
+/* فوتر */
 
 footer{
-    background:#1f2937;
-    color:white;
-    padding:30px 20px;
-    text-align:center;
-    margin-top:50px;
+background:#111827;
+color:white;
+padding-top:60px;
+margin-top:0;
 }
 
-footer p{
-    margin:10px 0;
+.footer-container{
+max-width:1200px;
+margin:auto;
+padding:0 20px 40px;
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:40px;
 }
 
-/ موبایل */
+.footer-box h3{
+margin-bottom:20px;
+color:#60a5fa;
+}
+
+.footer-box p{
+margin-bottom:10px;
+color:#d1d5db;
+}
+
+.footer-box ul{
+list-style:none;
+}
+
+.footer-box li{
+margin-bottom:12px;
+}
+
+.footer-box a{
+color:#d1d5db;
+}
+
+.footer-box a:hover{
+color:white;
+}
+
+.copyright{
+text-align:center;
+padding:20px;
+border-top:1px solid rgba(255,255,255,.1);
+color:#9ca3af;
+}
+
+/* موبایل */
 
 @media(max-width:768px){
 
 header{
-    flex-direction:column;
-    gap:15px;
+flex-direction:column;
+gap:15px;
 }
 
-.hero{
-    height:auto;
+nav{
+flex-wrap:wrap;
+justify-content:center;
 }
 
 .hero-content h1{
-    font-size:30px;
+font-size:34px;
 }
 
 .search-form{
-    flex-direction:column;
-}
-
-.search-form input,
-.search-form button{
-    width:100%;
+grid-template-columns:1fr;
 }
 
 .features{
-    flex-direction:column;
+grid-template-columns:1fr;
+}
+.tours{
+grid-template-columns:1fr;
+}
+
+.advantages{
+grid-template-columns:1fr;
+}
+
+.destinations{
+grid-template-columns:1fr;
+}
+
+.footer-container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.cta h2{
+font-size:30px;
+}
+
+.offer-content h2{
+font-size:28px;
 }
 
 }
@@ -225,46 +516,66 @@ header{
 
 <body>
 
-<!-- نوار بالا -->
-
 <div class="top-bar">
-✔️ پشتیبانی 24 ساعته | ✔️ کنسلی رایگان | ✔️ بهترین قیمت
+<div>💰 بهترین قیمت</div>
+<div>🛡 کنسلی رایگان</div>
+<div>📞 پشتیبانی 24 ساعته</div>
 </div>
-
-<!-- هدر -->
 
 <header>
 
 <div class="logo">
-✈️ سفرنو
+✈ سفرنو
+<span>سفری مطمئن و آسان</span>
 </div>
 
 <nav>
+<a href="#">خانه</a>
 <a href="#">بلیط</a>
 <a href="#">هتل</a>
 <a href="#">تورهای ویژه</a>
 <a href="#">تماس با ما</a>
 </nav>
 
-</header>
+<a href="#" class="login-btn">
+ورود / ثبت نام
+</a>
 
-<!-- هیرو -->
+</header>
 
 <section class="hero">
 
-<div class="overlay">
+<div class="overlay"></div>
 
 <div class="hero-content">
 
 <h1>
-سفر ارزون و مطمئن را در چند ثانیه پیدا کن
+سفر ارزون و مطمئن رو
+<br>
+<span>در چند ثانیه پیدا کن</span>
 </h1>
 
 <p>
-رزرو آنلاین بلیط، هتل و تور با پشتیبانی 24 ساعته
+رزرو آنلاین بلیط، هتل و تور با پشتیبانی ۲۴ ساعته
 </p>
 
 <div class="search-box">
+
+<div class="tabs">
+
+<button class="tab active">
+بلیط + هتل
+</button>
+
+<button class="tab">
+فقط بلیط
+</button>
+
+<button class="tab">
+فقط هتل
+</button>
+
+</div>
 
 <form class="search-form">
 
@@ -272,14 +583,20 @@ header{
 
 <input type="text" placeholder="مقصد">
 
-<input type="text" placeholder="تاریخ (مثلاً ۱۴۰۳/۰۳/۲۵)">
+<input type="text" placeholder="تاریخ (۱۴۰۳/۰۳/۲۵)">
 
-<button>
-جستجوی سفر
-</button>
+<input type="text" placeholder="تعداد مسافر">
 
 </form>
 
+<button class="search-btn">
+جستجوی سفر
+</button>
+
+<div class="hero-features">
+<span>✅ بهترین قیمت</span>
+<span>🛡 کنسلی رایگان</span>
+<span>📞 پشتیبانی 24 ساعته</span>
 </div>
 
 </div>
@@ -287,65 +604,231 @@ header{
 </div>
 
 </section>
+<!-- تورهای ویژه -->
 
-<!-- مزایا -->
+<h2 class="section-title">
+تورهای ویژه سفرنو
+</h2>
 
-<section class="features">
+<section class="tours">
 
-<div class="feature">
+<div class="tour-card">
+<img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800" alt="">
+<div class="tour-content">
+<h3>تور استانبول</h3>
+<p>۴ شب و ۵ روز همراه با هتل و صبحانه</p>
+<div class="price">از ۱۸ میلیون تومان</div>
+<button>مشاهده جزئیات</button>
+</div>
+</div>
 
-<h2>💬</h2>
+<div class="tour-card">
+<img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=800" alt="">
+<div class="tour-content">
+<h3>تور دبی</h3>
+<p>۳ شب و ۴ روز همراه با ترانسفر فرودگاهی</p>
+<div class="price">از ۲۲ میلیون تومان</div>
+<button>مشاهده جزئیات</button>
+</div>
+</div>
 
-<h3>پشتیبانی 24 ساعته</h3>
+<div class="tour-card">
+<img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=800" alt="">
+<div class="tour-content">
+<h3>تور کیش</h3>
+<p>اقامت در هتل ۵ ستاره کنار ساحل</p>
+<div class="price">از ۱۲ میلیون تومان</div>
+<button>مشاهده جزئیات</button>
+</div>
+</div>
+
+<div class="tour-card">
+<img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=800" alt="">
+<div class="tour-content">
+<h3>تور آنتالیا</h3>
+<p>پرواز مستقیم و خدمات کامل گردشگری</p>
+<div class="price">از ۲۸ میلیون تومان</div>
+<button>مشاهده جزئیات</button>
+</div>
+</div>
+
+</section>
+
+
+<!-- بنر تخفیف -->
+
+<section class="offer-banner">
+
+<div class="offer-content">
+
+<h2>
+🔥 جشنواره تابستانی سفرنو
+</h2>
 
 <p>
-در تمام روزهای هفته همراه شما هستیم
+تا ۳۰ درصد تخفیف روی تورهای منتخب داخلی و خارجی
 </p>
+
+<a href="#">
+مشاهده پیشنهادها
+</a>
 
 </div>
 
-<div class="feature">
+</section>
 
-<h2>✅</h2>
 
-<h3>کنسلی رایگان</h3>
+<!-- چرا سفرنو -->
 
+<h2 class="section-title">
+چرا سفرنو؟
+</h2>
+
+<section class="advantages">
+
+<div class="adv-card">
+<div class="adv-icon">✈️</div>
+<h3>رزرو سریع</h3>
 <p>
-تا 24 ساعت قبل از سفر بدون جریمه
+در کمتر از یک دقیقه بلیط و هتل خود را رزرو کنید.
 </p>
-
 </div>
 
-<div class="feature">
-
-<h2>💰</h2>
-
+<div class="adv-card">
+<div class="adv-icon">💰</div>
 <h3>بهترین قیمت</h3>
-
 <p>
-ارزان‌ترین قیمت تور و بلیط را پیدا کنید
+همیشه رقابتی‌ترین قیمت‌ها را ارائه می‌کنیم.
 </p>
+</div>
 
+<div class="adv-card">
+<div class="adv-icon">🛡️</div>
+<h3>پرداخت امن</h3>
+<p>
+تمام پرداخت‌ها از درگاه‌های معتبر انجام می‌شود.
+</p>
+</div>
+
+<div class="adv-card">
+<div class="adv-icon">📞</div>
+<h3>پشتیبانی 24 ساعته</h3>
+<p>
+در هر ساعت از شبانه‌روز پاسخگوی شما هستیم.
+</p>
 </div>
 
 </section>
+
+
+<!-- مقاصد محبوب -->
+
+<h2 class="section-title">
+مقاصد محبوب
+</h2>
+
+<section class="destinations">
+
+<div class="destination">
+<h3>استانبول</h3>
+<p>ترکیه</p>
+</div>
+
+<div class="destination">
+<h3>دبی</h3>
+<p>امارات</p>
+</div>
+
+<div class="destination">
+<h3>کیش</h3>
+<p>ایران</p>
+</div>
+
+<div class="destination">
+<h3>آنتالیا</h3>
+<p>ترکیه</p>
+</div>
+
+<div class="destination">
+<h3>تفلیس</h3>
+<p>گرجستان</p>
+</div>
+
+<div class="destination">
+<h3>مشهد</h3>
+<p>ایران</p>
+</div>
+
+</section>
+<!-- دعوت به رزرو -->
+
+<section class="cta">
+
+<h2>
+همین حالا سفر رویایی خودت را رزرو کن
+</h2>
+
+<p>
+هزاران هتل، پرواز و تور داخلی و خارجی با بهترین قیمت در سفرنو
+</p>
+
+<a href="#">
+شروع جستجو
+</a>
+
+</section>
+
 
 <!-- فوتر -->
 
 <footer>
 
-<p>
-📞 021-12345 | پشتیبانی 24 ساعته
-</p>
+<div class="footer-container">
+
+<div class="footer-box">
+
+<h3>✈ سفرنو</h3>
 
 <p>
-©️ 2026 Safarno Travel Agency
+سامانه رزرو آنلاین بلیط، هتل و تور با پشتیبانی ۲۴ ساعته
 </p>
+
+</div>
+
+<div class="footer-box">
+
+<h3>لینک‌های سریع</h3>
+
+<ul>
+<li><a href="#">خانه</a></li>
+<li><a href="#">بلیط هواپیما</a></li>
+<li><a href="#">رزرو هتل</a></li>
+<li><a href="#">تورهای ویژه</a></li>
+</ul>
+
+</div>
+
+<div class="footer-box">
+
+<h3>تماس با ما</h3>
+
+<p>📞 021-12345678</p>
+
+<p>📧 info@safarno.ir</p>
+
+<p>📍 تهران</p>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+© 2026 تمامی حقوق برای سفرنو محفوظ است.
+
+</div>
 
 </footer>
 
 </body>
-
 </html>
-```
-
