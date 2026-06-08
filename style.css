@@ -127,7 +127,7 @@ margin-top:4px;
 /* هیرو */
 
 .hero{
-background:url("images/travel.jpg") center center/cover no-repeat;
+background:url("travel.jpg") center center/cover no-repeat;
 min-height:750px;
 position:relative;
 display:flex;
