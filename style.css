@@ -1,0 +1,1561 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Vazirmatn',sans-serif;
+background:#f5f7fa;
+color:#333;
+line-height:1.8;
+}
+
+a{
+text-decoration:none;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+/* نوار بالا */
+
+.top-bar{
+background:#eef7fb;
+padding:10px;
+display:flex;
+justify-content:center;
+gap:40px;
+font-size:14px;
+color:#0d6efd;
+flex-wrap:wrap;
+}
+
+/* هدر */
+
+header{
+background:#fff;
+padding:18px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+position:sticky;
+top:0;
+z-index:999;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+margin-left:40px;
+}
+
+.logo-text{
+font-size:30px;
+font-weight:700;
+line-height:1.1;
+color:#1976d2;
+text-shadow:0 1px 0 #fff,
+0 2px 4px rgba(0,0,0,.12);
+}
+
+.logo-text span{
+display:block;
+font-size:14px;
+font-weight:500;
+color:#5f6c7b;
+margin-top:4px;
+letter-spacing:.5px;
+}
+
+.logo-img{
+width:80px;
+height:80px;
+object-fit:contain;
+}
+
+nav{
+display:flex;
+gap:20px;
+align-items:center;
+}
+
+nav a{
+font-size:17px;
+font-weight:600;
+color:#444;
+}
+
+nav a:hover{
+color:#1976d2;
+}
+
+.login-btn{
+background:#0d6efd;
+color:#fff;
+padding:10px 18px;
+border-radius:8px;
+}
+.header-phone{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.phone-icon{
+font-size:30px;
+color:#00a86b;
+}
+
+.phone-number{
+font-size:18px;
+font-weight:700;
+color:#222;
+line-height:1;
+}
+
+.phone-text{
+font-size:13px;
+color:#777;
+margin-top:4px;
+}
+
+/* هیرو */
+
+.hero{
+background:url("images/travel.jpg") center center/cover no-repeat;
+min-height:750px;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+overflow:hidden;
+}
+
+.hero-wave{
+position:absolute;
+bottom:-1px;
+left:0;
+width:100%;
+line-height:0;
+overflow:hidden;
+}
+
+.hero-wave svg{
+display:block;
+width:100%;
+height:80px;
+}
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:rgba(0,0,0,.35);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+width:90%;
+max-width:1100px;
+text-align:center;
+color:#fff;
+margin:auto;
+}
+
+.hero-content::before{
+content:"";
+position:absolute;
+
+width:550px;
+height:180px;
+
+left:50%;
+top:110px;
+
+transform:translateX(-50%);
+
+background:rgba(255,255,255,.12);
+
+filter:blur(45px);
+
+border-radius:50%;
+
+z-index:-1;
+}
+
+.hero-content h1{
+font-size:50px;
+font-weight:800;
+line-height:1.4;
+color:white;
+
+text-shadow:
+0 2px 10px rgba(0,0,0,.35),
+0 0 15px rgba(255,255,255,.15);
+}
+
+.hero-content h1 span{
+color:#8ddcff;
+
+text-shadow:
+0 2px 10px rgba(0,0,0,.35);
+}
+
+.hero-content p{
+font-size:20px;
+color:rgb(255, 255, 255);
+margin-top:15px;
+margin-bottom:35px;
+}
+
+/* فرم جستجو */
+
+.search-box{
+background:#fff;
+padding:35px;
+border-radius:24px;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+color:#333;
+max-width:1000px;
+margin:auto;
+margin-top:25px;
+}
+
+.tabs{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.tab{
+border:none;
+cursor:pointer;
+padding:10px 20px;
+background:#f1f5f9;
+border-radius:10px;
+font-size:18px;
+transition:.3s;
+}
+
+.tab:hover{
+background:#dbeafe;
+}
+
+.tab.active{
+background:#0d6efd;
+color:white;
+}
+
+.search-form{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-bottom:20px;
+}
+
+.search-form input{
+padding:15px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:15px;
+}
+
+.search-btn{
+height:65px;
+width:100%;
+padding:18px;
+
+background:linear-gradient(
+135deg,
+#0d6efd,
+#00b4ff
+);
+
+border:none;
+border-radius:14px;
+
+font-size:25px;
+font-weight:700;
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.search-btn:hover{
+transform:translateY(-2px);
+}
+
+.search-form{
+gap:20px;
+}
+
+.hero-features{
+margin-top:20px;
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+font-size:14px;
+}
+
+.input-box{
+display:flex;
+align-items:center;
+background:#fff;
+
+height:65px;
+
+border:2px solid #dbe4ee;
+
+border-radius:14px;
+
+padding:0 15px;
+
+transition:.3s;
+}
+.input-box:hover{
+border-color:#8bc5ff;
+}
+
+.input-box:focus-within{
+border-color:#0d6efd;
+box-shadow:0 0 0 4px rgba(13,110,253,.12);
+}
+.input-box span{
+font-size:30px;
+color:#0d6efd;
+margin-left:10px;
+}
+
+.input-box input{
+width:100%;
+border:none;
+outline:none;
+background:transparent;
+
+font-size:17px;
+font-weight:600;
+
+color:#222;
+}
+.input-box input::placeholder{
+color:#6b7280;
+font-size:16px;
+font-weight:500;
+}
+
+/* سفرتو سریع انتخاب کن */
+
+.quick-travel{
+max-width:1200px;
+margin:70px auto;
+padding:0 20px;
+}
+.quick-travel .section-title{
+text-align:center;
+width:100%;
+display:block;
+margin-bottom:40px;
+}
+
+.quick-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.quick-card{
+background:#fff;
+border-radius:18px;
+padding:35px 20px;
+text-align:center;
+box-shadow:0 4px 15px rgba(0,0,0,.06);
+transition:.3s;
+cursor:pointer;
+}
+
+.quick-card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.quick-icon{
+font-size:56px !important;
+display:block;
+margin-bottom:15px;
+}
+.economy{
+color:#4a90e2;
+}
+
+.family{
+color:#f5b942;
+}
+
+.luxury{
+color:#b14dff;
+}
+
+.adventure{
+color:#4caf50;
+}
+
+.quick-card h3{
+font-size:20px;
+font-weight:700;
+color:#333;
+}
+
+/* عنوان ها */
+
+.section-header{
+max-width:1200px;
+margin:70px auto 30px;
+padding:0 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.section-header .section-title{
+width:auto;
+margin:0;
+}
+
+.section-title{
+font-size:36px;
+color:#1e293b;
+}
+
+.center-title{
+text-align:center;
+font-size:36px;
+margin:70px auto 40px;
+color:#1e293b;
+}
+
+.more-link{
+color:#0d6efd;
+font-weight:bold;
+}
+
+/*==================================
+     تورهای ویژه   SPECIAL TOURS SLIDER
+===================================*/
+
+.special-tours{
+max-width:1400px;
+margin:80px auto;
+padding:0 20px;
+}
+
+.slider-wrapper{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:15px;
+position:relative;
+}
+
+.slider-window{
+overflow:hidden;
+width:100%;
+}
+
+.slider-track{
+display:flex;
+gap:22px;
+transition:transform .6s ease;
+will-change:transform;
+}
+
+.tour-card{
+flex:0 0 calc((100% - 66px)/4);
+background:#fff;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 5px 18px rgba(0,0,0,.08);
+transition:.35s;
+display:flex;
+flex-direction:column;
+}
+
+.tour-card:hover{
+transform:translateY(-8px);
+box-shadow:0 12px 28px rgba(0,0,0,.15);
+}
+
+.tour-image{
+position:relative;
+height:210px;
+overflow:hidden;
+}
+
+.tour-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:.5s;
+}
+
+.tour-card:hover .tour-image img{
+transform:scale(1.08);
+}
+
+/*---------------- Badge ----------------*/
+
+.badge{
+position:absolute;
+top:12px;
+right:12px;
+padding:6px 12px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+color:#fff;
+z-index:5;
+}
+
+.red{
+background:#ef4444;
+}
+
+.orange{
+background:#f97316;
+}
+
+.blue{
+background:#2563eb;
+}
+
+.purple{
+background:#8b5cf6;
+}
+
+.green{
+background:#16a34a;
+}
+
+/*---------------- Heart ----------------*/
+
+.heart{
+position:absolute;
+left:12px;
+top:12px;
+width:38px;
+height:38px;
+background:#fff;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+cursor:pointer;
+box-shadow:0 3px 10px rgba(0,0,0,.18);
+z-index:20;
+transition:.3s;
+}
+
+.heart:hover{
+color:#ff3b30;
+transform:scale(1.12);
+}
+
+/*---------------- Content ----------------*/
+
+.tour-content{
+padding:18px;
+display:flex;
+flex-direction:column;
+flex-grow:1;
+}
+
+.tour-content h3{
+font-size:23px;
+font-weight:700;
+text-align:center;
+margin-bottom:10px;
+color:#222;
+}
+
+.tour-content p{
+font-size:15px;
+text-align:center;
+color:#666;
+line-height:1.8;
+margin-bottom:14px;
+}
+
+.price{
+
+font-size:20px;
+
+font-weight:700;
+
+text-align:center;
+
+color:#0d6efd;
+
+margin:12px 0;
+
+}
+.tour-rate{
+
+text-align:center;
+
+font-size:15px;
+
+color:#f7b500;
+
+font-weight:bold;
+
+margin-bottom:8px;
+
+}
+.tour-services{
+
+display:flex;
+
+justify-content:space-between;
+
+font-size:13px;
+
+color:#2e7d32;
+
+margin:12px 0 18px;
+
+}
+
+.tour-content button{
+
+margin-top:auto;
+
+width:100%;
+
+height:46px;
+
+background:#fff;
+
+border:2px solid #f4a261;
+
+color:#d97706;
+
+font-size:15px;
+
+font-weight:bold;
+
+border-radius:10px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+
+
+.tour-content button:hover{
+
+background:#f4a261;
+
+color:#fff;
+
+}
+/*---------------- Arrows ----------------*/
+
+.slide-btn{
+width:52px;
+height:52px;
+border:none;
+border-radius:50%;
+background:#fff;
+box-shadow:0 4px 12px rgba(0,0,0,.15);
+cursor:pointer;
+font-size:28px;
+transition:.3s;
+flex-shrink:0;
+}
+
+.slide-btn:hover{
+background:#0d6efd;
+color:#fff;
+}
+
+/*---------------- Indicators ----------------*/
+
+.slider-indicators{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-top:25px;
+}
+
+.slider-indicators span{
+width:12px;
+height:12px;
+border-radius:50%;
+background:#d4d4d4;
+transition:.3s;
+}
+
+.slider-indicators span.active{
+background:#0d6efd;
+transform:scale(1.3);
+}
+
+/*---------------- Responsive ----------------*/
+
+@media(max-width:1100px){
+
+.tour-card{
+flex:0 0 calc((100% - 22px)/2);
+}
+
+}
+
+@media(max-width:768px){
+
+.slide-btn{
+display:none;
+}
+
+.tour-card{
+flex:0 0 100%;
+}
+
+}
+
+
+/*========================
+  بنر تخفیف - PROMO BANNER FIX FINAL
+=========================*/
+
+.offer-banner{
+max-width:1200px;
+margin:60px auto;
+padding:0 20px;
+}
+
+.offer-content{
+background:#fff7ed;
+border-radius:18px;
+padding:25px 30px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+position:relative;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+/* تزئین ضربدر */
+.offer-content::before,
+.offer-content::after{
+content:"×";
+position:absolute;
+font-size:80px;
+color:rgba(255,140,0,.08);
+font-weight:bold;
+}
+
+.offer-content::before{
+top:-10px;
+left:20px;
+transform:rotate(15deg);
+}
+
+.offer-content::after{
+bottom:-20px;
+right:40px;
+transform:rotate(-20deg);
+}
+
+/* راست: آیکون */
+.offer-icon{
+font-size:60px;
+width:80px;
+height:80px;
+background:#fff;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 6px 15px rgba(0,0,0,.12);
+flex-shrink:0;
+}
+
+/* وسط */
+.offer-center{
+flex:1;
+text-align:center;
+}
+
+.offer-center h2{
+font-size:28px;
+font-weight:800;
+color:#222;
+margin-bottom:10px;
+}
+
+.offer-center p{
+font-size:15px;
+color:#555;
+line-height:1.8;
+}
+
+/* ۳۰٪ نارنجی */
+.highlight{
+color:#ff7a00;
+font-size:20px;
+font-weight:900;
+}
+
+/* چپ دکمه */
+.offer-action a{
+display:inline-block;
+background:#ff7a00;
+color:#fff;
+padding:12px 22px;
+border-radius:10px;
+font-weight:bold;
+text-decoration:none;
+white-space:nowrap;
+transition:.3s;
+}
+
+.offer-action a:hover{
+background:#e66900;
+transform:translateY(-2px);
+}
+/* چرا سفرنو */
+
+.advantages{
+max-width:1300px;
+margin:auto;
+padding:0 20px 80px;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:20px;
+}
+
+.adv-card{
+background:#fff;
+padding:30px;
+text-align:center;
+border-radius:16px;
+box-shadow:0 4px 15px rgba(0,0,0,.06);
+transition:.3s;
+}
+
+.adv-card:hover{
+transform:translateY(-5px);
+}
+
+.adv-icon{
+font-size:42px;
+margin-bottom:15px;
+}
+
+/* نظرات */
+
+.reviews{
+max-width:1200px;
+margin:auto;
+padding:0 20px 80px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.review-card{
+background:#fff;
+padding:30px;
+border-radius:16px;
+box-shadow:0 4px 15px rgba(0,0,0,.06);
+}
+
+.stars{
+font-size:20px;
+margin-bottom:15px;
+}
+
+.review-card h4{
+margin-top:15px;
+color:#0d6efd;
+}
+
+/*==========================
+        مجله سفرنو
+===========================*/
+
+.blog-section{
+max-width:1200px;
+margin:80px auto;
+padding:0 20px;
+}
+
+.blog-layout{
+display:grid;
+grid-template-columns:1.8fr 1fr;
+gap:25px;
+align-items:stretch;
+}
+
+/* کارت ها */
+
+.blog-main,
+.blog-small{
+
+background:#fff;
+
+border-radius:18px;
+
+overflow:hidden;
+
+box-shadow:0 6px 18px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.blog-main:hover,
+.blog-small:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 12px 28px rgba(0,0,0,.15);
+
+}
+
+/* ستون راست */
+
+.blog-side{
+
+display:flex;
+
+flex-direction:column;
+
+gap:25px;
+
+}
+
+/* تصاویر */
+
+.blog-image{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.blog-main .blog-image{
+
+height:420px;
+
+}
+
+.blog-small .blog-image{
+
+height:170px;
+
+}
+
+.blog-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+display:block;
+
+transition:.4s;
+
+}
+
+.blog-main:hover img,
+.blog-small:hover img{
+
+transform:scale(1.05);
+
+}
+
+/* برچسب */
+
+.blog-badge{
+
+position:absolute;
+
+top:12px;
+
+right:12px;
+
+padding:6px 14px;
+
+border-radius:20px;
+
+font-size:12px;
+
+font-weight:bold;
+
+color:#fff;
+
+}
+
+.green{
+
+background:#27ae60;
+
+}
+
+.blue{
+
+background:#0d6efd;
+
+}
+
+.orange{
+
+background:#ff8a00;
+
+}
+
+/* متن */
+
+.blog-content{
+
+padding:18px;
+
+}
+
+.blog-main h3{
+
+font-size:24px;
+
+margin-bottom:10px;
+
+line-height:1.8;
+
+color:#222;
+
+}
+
+.blog-small h3{
+
+font-size:18px;
+
+margin-bottom:8px;
+
+line-height:1.7;
+
+color:#222;
+
+}
+
+.blog-content p{
+
+font-size:14px;
+
+line-height:1.9;
+
+color:#666;
+
+}
+
+/* پایین کارت */
+
+.blog-footer{
+
+margin-top:15px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+font-size:13px;
+
+color:#777;
+
+}
+
+.blog-footer a{
+
+color:#0d6efd;
+
+font-weight:bold;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.blog-footer a:hover{
+
+color:#ff7a00;
+
+}
+
+/* عنوان بخش */
+
+.blog-section .section-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:30px;
+
+}
+
+.blog-section .center-title{
+
+font-size:36px;
+
+font-weight:800;
+
+margin:0;
+
+}
+
+.blog-section .more-link{
+
+font-weight:bold;
+
+text-decoration:none;
+
+color:#0d6efd;
+
+}
+
+.blog-section .more-link:hover{
+
+color:#ff7a00;
+
+}
+.left-badge{
+
+left:12px;
+
+right:auto;
+
+}
+
+/* موبایل */
+
+@media(max-width:900px){
+
+.blog-layout{
+
+grid-template-columns:1fr;
+
+}
+
+.blog-main .blog-image{
+
+height:220px;
+
+}
+
+.blog-small .blog-image{
+
+height:200px;
+
+}
+
+.blog-section .section-header{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.blog-section .center-title{
+
+text-align:center;
+
+}
+
+}
+/*==========================
+      پشتیبانی
+===========================*/
+
+.support-section{
+
+max-width:1200px;
+
+margin:90px auto;
+
+padding:0 20px;
+
+}
+
+.support-content{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+background:linear-gradient(135deg,#eef7ff,#fff8ef);
+
+border-radius:24px;
+
+padding:45px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+overflow:hidden;
+
+}
+
+.support-text{
+
+width:60%;
+
+}
+
+.support-tag{
+
+display:inline-block;
+
+background:#0d6efd;
+
+color:#fff;
+
+padding:8px 16px;
+
+border-radius:30px;
+
+font-size:14px;
+
+margin-bottom:18px;
+
+}
+
+.support-text h2{
+
+font-size:42px;
+
+margin-bottom:15px;
+
+color:#222;
+
+}
+
+.support-text p{
+
+font-size:18px;
+
+line-height:2;
+
+color:#666;
+
+margin-bottom:28px;
+
+}
+
+.support-buttons{
+
+display:flex;
+
+gap:15px;
+
+}
+
+.call-btn{
+
+background:#ff8a00;
+
+color:white;
+
+padding:14px 24px;
+
+border-radius:10px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.call-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+.chat-btn{
+
+background:#0d6efd;
+
+color:white;
+
+padding:14px 24px;
+
+border-radius:10px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.chat-btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+/*==========================
+   آیکون جایگزین تصویر پشتیبانی
+===========================*/
+
+.support-icon{
+
+width:35%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.icon-circle{
+
+width:160px;
+
+height:160px;
+
+background:linear-gradient(135deg,#0d6efd,#00c2ff);
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:70px;
+
+color:#fff;
+
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+animation:float 3s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%,100%{transform:translateY(0);}
+
+50%{transform:translateY(-10px);}
+
+}
+
+/* CTA */
+
+.cta{
+background:linear-gradient(135deg,#0d6efd,#00b4ff);
+padding:80px 20px;
+text-align:center;
+color:white;
+}
+
+.cta h2{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.cta p{
+font-size:18px;
+margin-bottom:25px;
+}
+
+.cta a{
+display:inline-block;
+background:white;
+color:#0d6efd;
+padding:14px 30px;
+border-radius:10px;
+font-weight:bold;
+}
+
+/* فوتر */
+
+footer{
+background:#111827;
+color:white;
+padding-top:60px;
+}
+
+.footer-container{
+max-width:1200px;
+margin:auto;
+padding:0 20px 40px;
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:40px;
+}
+
+.footer-box h3{
+margin-bottom:20px;
+color:#60a5fa;
+}
+
+.footer-box p{
+margin-bottom:10px;
+color:#d1d5db;
+}
+
+.footer-box ul{
+list-style:none;
+}
+
+.footer-box li{
+margin-bottom:12px;
+}
+
+.footer-box a{
+color:#d1d5db;
+}
+
+.footer-box a:hover{
+color:white;
+}
+
+.footer-benefits{
+text-align:center;
+padding:20px;
+border-top:1px solid rgba(255,255,255,.1);
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.copyright{
+text-align:center;
+padding:20px;
+color:#9ca3af;
+}
+
+/* موبایل */
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+.header-phone{
+display:flex;
+align-items:center;
+gap:12px;
+margin-left:15px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero{
+min-height:auto;
+padding:80px 0;
+}
+
+.hero-content h1{
+font-size:34px;
+}
+
+.search-form{
+grid-template-columns:1fr;
+}
+
+.stats{
+grid-template-columns:1fr 1fr;
+}
+
+.tours{
+grid-template-columns:1fr;
+}
+
+@media(max-width:768px){
+
+.advantages{
+grid-template-columns:1fr;
+}
+
+}
+
+.reviews{
+grid-template-columns:1fr;
+}
+
+.destinations{
+grid-template-columns:1fr;
+}
+
+.footer-container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.section-header{
+flex-direction:column;
+gap:10px;
+text-align:center;
+}
+
+.cta h2{
+font-size:30px;
+}
+
+.offer-content h2{
+font-size:28px;
+}
+
+.logo-text{
+font-size:24px;
+}
+}
+
+@media(max-width:500px){
+
+.quick-grid{
+grid-template-columns:1fr;
+}
+
+}
